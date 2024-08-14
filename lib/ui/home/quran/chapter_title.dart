@@ -6,8 +6,9 @@ import '../../../theme/MyTheme.dart';
 class ChapterTitle extends StatelessWidget {
   String title;
   int numofAya;
+  int suratarteb;
 
-  ChapterTitle(this.title, this.numofAya);
+  ChapterTitle(this.title, this.numofAya, this.suratarteb);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,8 @@ class ChapterTitle extends StatelessWidget {
           child: InkWell(
               onTap: () {
                 Navigator.pushNamed(context, ChapterDetails.routeName,
-                    arguments: DetailedChapterArgs(numofAya, title));
+                    arguments:
+                        DetailedChapterArgs(numofAya, title, suratarteb));
               },
               child: Text(title,
                   style: TextStyle(fontSize: 25), textAlign: TextAlign.center)),
